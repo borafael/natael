@@ -17,5 +17,6 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
+	compile "org.apache.poi:poi:3.9"
 	testCompile "junit:junit:4.12"
 }
