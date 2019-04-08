@@ -2,13 +2,19 @@ package ar.org.natael;
 
 public class Guest {
 	
+	public static enum STATE {
+		PENDIENTE,
+		CONFIRMADO,
+		CANCELADO
+	}
+
 	private String firstName;
 	private String lastName;
 	private String email;
 	private String phone;
 	private String cell;
 	private String group;
-	private String invited;
+	private STATE state;
 	private String confirmed;
 	private String menu;
 	private String address;
@@ -25,7 +31,7 @@ public class Guest {
 		this.phone = builder.phone;
 		this.cell = builder.cell;
 		this.group = builder.group;
-		this.invited = builder.invited;
+		this.state = builder.state;
 		this.confirmed = builder.confirmed;
 		this.menu = builder.menu;
 		this.address = builder.address;
@@ -60,8 +66,8 @@ public class Guest {
 		return group;
 	}
 
-	public String getInvited() {
-		return invited;
+	public STATE getState() {
+		return state;
 	}
 
 	public String getConfirmed() {
@@ -108,7 +114,7 @@ public class Guest {
 		private String phone;
 		private String cell;
 		private String group;
-		private String invited;
+		private STATE state;
 		private String confirmed;
 		private String menu;
 		private String address;
@@ -150,8 +156,8 @@ public class Guest {
 			return this;
 		}
 		
-		public Builder invited(String invited) {
-			this.invited = invited;
+		public Builder state(STATE state) {
+			this.state = state;
 			return this;
 		}
 		
